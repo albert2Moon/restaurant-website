@@ -1693,6 +1693,7 @@
   }
   #about_img {
     border-radius: 50px;
+    background-image: url(/about.jpg);
   }
   .services_container {
     /* border: 1px solid #fff; */
@@ -1709,7 +1710,7 @@
     /* margin: 0 10px; */
     box-shadow: 0 0 20px black;
     background-color: rgb(83, 81, 81);
-    background-image: url(/...);
+    background-image: url(/services.jpg);
     background-size: cover;
     background-position: center;
   }
