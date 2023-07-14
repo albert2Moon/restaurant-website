@@ -1755,9 +1755,11 @@
     border-radius: 50px;
     box-shadow: 0 0 20px black;
     background-color: rgb(83, 81, 81);
-    background-image: url(/...);
-    background-size: cover;
-    background-position: center;
+  }
+  .location_card iframe {
+    width: 300px;
+    height: 300px; 
+    border-radius: 50px;
   }
   .location_info {
     /* border: 1px solid #fff; */

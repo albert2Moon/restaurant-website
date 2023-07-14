@@ -20,9 +20,14 @@
                     <li> <a href="/about.html">About</a> </li>
                     <li> <a href="/contact.html">Contact</a> </li>
                 </ul>
+                <ion-icon name="logo-facebook" role="img" title="logo-facebook"></ion-icon>
+                <ion-icon name="logo-twitter" role="img" title="logo-twitter"></ion-icon>
+                <ion-icon name="logo-whatsapp" role="img" title="logo-whatsapp"></ion-icon>
+                <ion-icon name="logo-instagram" role="img" title="logo-instagram"></ion-icon>
+    
             </div>
 
-            <button class="menuBtn">
+            <button class="menuBtn" title="Menu">
                 <div class="m1"></div>
                 <div class="m2"></div>
                 <div class="m3"></div>
@@ -70,7 +75,7 @@
     <section>
         <div class="location_container">
             <div class="location_card">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d64318912.70575103!2d-1.0357360999999938!3d10.284540949999993!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x177dbb82a52d0017%3A0xf622e71313acaaa5!2sNightingales!5e0!3m2!1sen!2sug!4v1689224644353!5m2!1sen!2sug" width="400" height="395" style="border-radius:50px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d64318912.70575103!2d-1.0357360999999938!3d10.284540949999993!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x177dbb82a52d0017%3A0xf622e71313acaaa5!2sNightingales!5e0!3m2!1sen!2sug!4v1689224644353!5m2!1sen!2sug" width="400" height="395" allowfullscreen="" title="Google-map" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
             <div class="location_info">
                 <h2>Location</h2>
@@ -80,7 +85,7 @@
         </div>
     </section>
 
-    <button id="toTopButton"><svg xmlns="http://www.w3.org/2000/svg" class="ionicon" viewBox="0 0 512 512"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="48" d="M112 244l144-144 144 144M256 120v292"/></svg></button>
+    <button id="toTopButton" title="toTopButton><svg xmlns="http://www.w3.org/2000/svg" class="ionicon" viewBox="0 0 512 512"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="48" d="M112 244l144-144 144 144M256 120v292"/></svg></button>
 
     <footer>
         <div class="footer_card">
@@ -109,10 +114,10 @@
             <h2>Follow Us</h2>
             <div class="footer_line"></div>
 
-            <ion-icon name="logo-facebook"></ion-icon>
-            <ion-icon name="logo-twitter"></ion-icon>
-            <ion-icon name="logo-whatsapp"></ion-icon>
-            <ion-icon name="logo-instagram"></ion-icon>
+            <ion-icon name="logo-facebook" role="img" title="logo-facebook"></ion-icon>
+            <ion-icon name="logo-twitter" role="img" title="logo-twitter"></ion-icon>
+            <ion-icon name="logo-whatsapp" role="img" title="logo-whatsapp"></ion-icon>
+            <ion-icon name="logo-instagram" role="img" title="logo-instagram"></ion-icon>
 
         </div>
     </footer>
@@ -128,5 +133,19 @@
       nomodule
       src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
     ></script>
+
+<script>
+  const iframeContainer = document.getElementByClass('location-card');
+  const iframe = document.createElement('iframe');
+  iframe.src = 'about.html';
+  iframe.title = 'Google-maps';
+  //iframe.loading = 'lazy'; // Optional: Set loading behavior to 'lazy' if supported
+
+  // Load iframe content when the page has finished loading
+  window.addEventListener('load', function() {
+    iframeContainer.appendChild(iframe);
+  });
+</script>
+
 </body>
 </html>
