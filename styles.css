@@ -1,5 +1,5 @@
 /* Laptop Responsiveness */
-@media  screen and (min-width: 1020px) and (max-width: 1500px) {
+@media  screen and (min-width: 1020px) and (max-width: 1650px) {
   * {
     box-sizing: border-box;
     margin: 0;
@@ -29,6 +29,25 @@
   .cornerpics {
     position: absolute;
   }
+
+  .hide {
+    opacity: 0;
+    transition: opacity 0.5s;
+  }
+  .show {
+    opacity: 1;
+  }
+  /* Add CSS animation class */
+.animate-scroll {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+.animate-scroll.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
   
 
   .body_section {
@@ -82,7 +101,7 @@
   header h1 {
     font-size: 3rem;
     font-weight: 100;
-    padding-top: 20vh;
+    padding-top: 5vh;
     text-shadow: 0 2px 10px black;
   }
   header h1 span {
@@ -106,6 +125,24 @@
     background-color: rgb(209, 6, 6);
     transition: all 0.4s ease;
   }
+  /* Add animation to the header */
+header {
+  animation-name: slideIn;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes slideIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
   
 
   /* Welcome Container */
@@ -117,7 +154,7 @@
     flex-wrap: wrap;
     width: auto;
     /* background: linear-gradient(to right, rgba(61, 61, 61, 0.5), rgba(99, 98, 98, 0.5)); */
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.3);
   }
   .welcome_card {
     /* border: 1px solid #fff; */
@@ -125,8 +162,8 @@
     width: 15vw;
     border-radius: 30px;
     margin: 30px 50px;
-    background: rgba(0, 0, 0, 0.5);
-    box-shadow: 2px 2px 10px #000;
+    background: rgba(0, 0, 0, 0.7);
+    box-shadow: 2px 2px 20px #000;
   }
   .welcome_logo {
     /* border: 1px solid #fff; */
@@ -157,6 +194,23 @@
     padding-top: 10vh;
     color: rgb(206, 206, 206);
   }
+  .welcome_card .welcome_container {
+    opacity: 0;
+    animation: slide-in 1s forwards;
+  }
+  
+  @keyframes slide-in {
+    0% {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+
 
   
 
@@ -206,8 +260,23 @@
     margin: 20px;
     margin-top: 30px;
     border-radius: 20px;
-    background: rgba(0, 0, 0, 0.5);
-    box-shadow: 2px 2px 10px #000;
+    background: rgba(0, 0, 0, 0.7);
+    box-shadow: 2px 2px 15px #000;
+  }
+  .food_card {
+    opacity: 0;
+    animation: fade-in 1s forwards;
+  }
+
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
   .food_img {
     border: 3px solid rgb(211,111,13);
@@ -299,7 +368,7 @@
   /* About Section */
   .about_container {
     /* border: 1px solid #fff; */
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.3);
     height: auto;
     display: flex;
     flex-wrap: wrap;
@@ -347,6 +416,43 @@
     background-size: cover;
     background-position: center;
   }
+  .about_card {
+    opacity: 0;
+    animation: fade-in 1s forwards;
+  }
+
+  .about_card h2, .about_card p, .about_card a button {
+    opacity: 0;
+    animation: fade-in 1s forwards;
+    animation-delay: 0.5s;
+  }
+
+  .about_card #about_img {
+    position: relative;
+    left: -100%;
+    animation: slide-in 10s forwards;
+  }
+
+  @keyframes slide-in {
+    from {
+      left: -100%;
+      /* transform: translateX(-100%); */
+    }
+    to {
+      left: 0;
+      /* transform: translateX(0); */
+    }
+  }
+
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
 
 
  /* Menu Page */
@@ -509,11 +615,16 @@
     width: 30vw;
     margin: 0 10px;
     border-radius: 50px;
+    overflow: hidden;
     box-shadow: 0 0 20px black;
     background-color: rgb(83, 81, 81);
     background-image: url(/...);
     background-size: cover;
     background-position: center;
+  }
+  iframe {
+    height: 400px;
+    width: 410px;
   }
   .location_info {
     /* border: 1px solid #fff; */
@@ -537,6 +648,51 @@
     font-size: 1.3rem;
     line-height: 1.5;
     color: rgb(206, 206, 206);
+  }
+  .aboutUs_card, .services_card, .location_info {
+    opacity: 0;
+    animation: fade-in 1s forwards;
+  }
+
+  .aboutUs_card h2, .aboutUs_card p,
+  .services_card h2, .services_card p,
+  .location_info h2, .location_info p {
+    opacity: 0;
+    animation: fade-in 1s forwards;
+    animation-delay: 0.5s;
+  }
+
+  .aboutUs_card #about_img {
+    transform: translateX(-100%);
+    animation: slide-in 1s forwards;
+  }
+
+  .services_card #services_img {
+    transform: translateX(100%);
+    animation: slide-in 1s forwards;
+  }
+  
+  .location_card {
+    transform: translateX(-100%);
+    animation: slide-in 1s forwards;
+  }
+
+  @keyframes slide-in {
+    from {
+      transform: translateX(-100%);
+    }
+    to {
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
   }
 
   /* Contact page */
@@ -939,21 +1095,22 @@
 
 
 /* To top Btn */
-#toTopButton {
-  display: none;
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  padding: 10px;
-  width: 50px;
-  height: 50px;
-  background-color: rgb(211, 111, 13);
-  color: #fff;
-  border: 2px solid #fff;
-  border-radius: 4px;
-  cursor: pointer;
-  border-radius: 100%;
-}
+ #toTopButton {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 10px;
+    width: 50px;
+    height: 50px;
+    background-color: rgb(211, 111, 13);
+    color: #fff;
+    border: 2px solid #fff;
+    border-radius: 4px;
+    cursor: pointer;
+    border-radius: 100%;
+ }
+
 
 
   /* About Section */
@@ -1301,8 +1458,8 @@
     margin: 20px 0;
   }
   
-
 }
+
 
 
 
@@ -1365,7 +1522,7 @@
   .nav_container {
     /* border: 1px solid #fff; */
     width: 100vw;
-    height: auto;
+    height: 10vh;
     display: flex;
     padding: 10px 5vw;
     justify-content: space-between;
@@ -1388,7 +1545,7 @@
   .nav_links {
     /* border: 1px solid #fff; */
     background-color: rgba(0, 0, 0, 0.9);
-    height: 80vh;
+    height: 60vh;
     width: 100vw;
     position: absolute;
     top: 10vh;
@@ -1441,15 +1598,15 @@
     flex-wrap: wrap;
     width: auto;
     /* background: linear-gradient(to right, rgba(61, 61, 61, 0.5), rgba(99, 98, 98, 0.5)); */
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.3);
   }
   .welcome_card {
     /* border: 1px solid #fff; */
-    height: 30vh;
+    height: 25vh;
     width: 30vw;
     border-radius: 30px;
     margin: 30px 5px;
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(0, 0, 0, 0.7);
     box-shadow: 2px 2px 10px #000;
   }
   .welcome_logo {
@@ -1465,12 +1622,12 @@
     width: 12vw;
   }
   .welcome_card h3 {
-    margin-top: 12vh;
-    margin-bottom: 10px;
+    margin-top: 11vh;
+    margin-bottom: 8px;
     font-size: 1.2rem;  
   }
   .welcome_card p {
-    font-size: .9rem;
+    font-size: 1rem;
     line-height: 1.2;
   }
   .welcome_card p span {
@@ -1520,16 +1677,16 @@
   .food_card {
     /* border: 1px solid #fff; */
     width: 35vw;
-    height: 30vh;
+    height: 25vh;
     margin: 5px;
     margin-top: 40px;
     border-radius: 20px;
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(0, 0, 0, 0.7);
     box-shadow: 2px 2px 10px #000;
   }
   .food_img {
     border: 2px solid rgb(211,111,13);
-    height: 15vh;
+    height: 100px;
     border-radius: 100%;
     margin: -5vh 15px 0 15px;
     width: auto;
@@ -1612,7 +1769,7 @@
   /* About Section */
   .about_container {
     /* border: 1px solid #fff; */
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.3);
     height: auto;
     display: block;
     padding: 30px 10px;
@@ -1650,7 +1807,7 @@
   
   #about_img {
     border-radius: 20px;
-    height: 50vh;
+    height: 40vh;
     width: auto;
     margin: 0 10px;
     box-shadow: 0 0 20px black;
