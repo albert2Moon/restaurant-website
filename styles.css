@@ -428,7 +428,6 @@ header {
   }
 
   .about_card #about_img {
-    position: relative;
     left: -100%;
     animation: slide-in 10s forwards;
   }
@@ -863,6 +862,25 @@ header {
     border-radius: 10px;
   }
 
+  .hide {
+    opacity: 0;
+    transition: opacity 0.5s;
+  }
+  .show {
+    opacity: 1;
+  }
+  /* Add CSS animation class */
+.animate-scroll {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+.animate-scroll.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
   .nav_container {
     /* border: 1px solid #fff; */
     width: 100vw;
@@ -932,6 +950,23 @@ header {
     border-radius: 30px;
     margin: 20px 0;
   }
+    /* Add animation to the header */
+header {
+  animation-name: slideIn;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes slideIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 
   /* Welcome Section */
   .welcome_container {
@@ -963,13 +998,13 @@ header {
 
   }
   .welcome_card h3 {
-    margin-top: 20vh;
-    margin-bottom: 10px;
+    margin-top: 18vh;
+    margin-bottom: 5px;
     font-size: 25px; 
     color: rgb(211, 211, 211); 
   }
   .welcome_card p {
-    font-size: 1rem;
+    font-size: 1.1rem;
     line-height: 1.5;
     color: rgb(211, 211, 211);
   }
@@ -980,6 +1015,21 @@ header {
     text-decoration: none;
     padding-top: 10vh;
     color: rgb(211, 211, 211);
+  }
+  .welcome_card .welcome_container {
+    opacity: 0;
+    animation: slide-in 1s forwards;
+  }
+  
+  @keyframes slide-in {
+    0% {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
 
   /* Food Section */
@@ -1023,7 +1073,7 @@ header {
   .food_card {
     /* border: 1px solid #fff; */
     width: 15vw;
-    height: 32vh;
+    height: 35vh;
     margin: 10px;
     margin-top: 30px;
     border-radius: 20px;
@@ -1032,7 +1082,7 @@ header {
   }
   .food_img {
     border: 2px solid rgb(211,111,13);
-    height: 15vh;
+    height: 90px;
     border-radius: 100%;
     margin: -5vh 15px 0 15px;
     width: auto;
@@ -1519,6 +1569,24 @@ header {
     border-radius: 10px;
   }
 
+  .hide {
+    opacity: 0;
+    transition: opacity 0.5s;
+  }
+  .show {
+    opacity: 1;
+  }
+  /* Add CSS animation class */
+.animate-scroll {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+.animate-scroll.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
   .nav_container {
     /* border: 1px solid #fff; */
     width: 100vw;
@@ -1587,6 +1655,22 @@ header {
     font-size: 1.2rem;
     border-radius: 30px;
     margin: 0 0 20px 0;
+  }
+  header {
+    animation-name: slideIn;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+  }
+  
+  @keyframes slideIn {
+    0% {
+      opacity: 0;
+      transform: translateY(-50px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
 
   /* Welcome Section */
@@ -1750,7 +1834,7 @@ header {
 
 /* To top Btn */
 #toTopButton {
-  display: none;
+  /* display: none; */
   position: fixed;
   bottom: 20px;
   right: 20px;
@@ -1821,7 +1905,7 @@ header {
 
   /* About Page */
   .aboutUs_container {
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.3);
     /* border: 1px solid #fff; */
     display: block;
     padding: 30px 0;
@@ -1829,7 +1913,7 @@ header {
   .aboutUs_card {
     /* border: 1px solid #fff; */
     width: auto;
-    height: 50vh;
+    height: 40vh;
     padding: 20px 10px;
   }
   .aboutUs_card h2 {
@@ -1862,7 +1946,7 @@ header {
   }
   #services_img {
     border-radius: 50px;
-    height: 50vh;
+    height: 45vh;
     width: 100vw;
     /* margin: 0 10px; */
     box-shadow: 0 0 20px black;
@@ -1874,7 +1958,7 @@ header {
   .services_card {
     /* border: 1px solid #fff; */
     width: auto;
-    height: 50vh;
+    height: 40vh;
     padding: 20px;
   }
 
@@ -1900,28 +1984,29 @@ header {
   }
 
   .location_container {
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.3);
     /* border: 1px solid #fff; */
     padding: 30px 10px;
     display: block;
+    /* margin-bottom: 100px; */
   }
   .location_card {
     /* border: 1px solid #fff; */
-    height: 50vh;
+    height: 40vh;
     width: auto;
     border-radius: 50px;
     box-shadow: 0 0 20px black;
     background-color: rgb(83, 81, 81);
   }
-  .location_card iframe {
-    width: 300px;
+  iframe {
+    width: 340px;
     height: 300px; 
     border-radius: 50px;
   }
   .location_info {
     /* border: 1px solid #fff; */
     width: auto;
-    height: 50vh;
+    height: 30vh;
     padding: 20px;
   }
   
@@ -1941,6 +2026,52 @@ header {
     line-height: 1.5;
     color: rgb(206, 206, 206);
   }
+  /*.aboutUs_card, .services_card, .location_info {
+    opacity: 0;
+    animation: fade-in 1s forwards;
+  }
+
+  .aboutUs_card h2, .aboutUs_card p,
+  .services_card h2, .services_card p,
+  .location_info h2, .location_info p {
+    opacity: 0;
+    animation: fade-in 1s forwards;
+    animation-delay: 0.5s;
+  }
+
+  /*.aboutUs_card #about_img {
+    transform: translateX(-100%);
+    animation: slide-in 1s forwards;
+  }*/
+
+  .services_card #services_img {
+    transform: translateX(100%);
+    animation: slide-in 1s forwards;
+  }
+  
+  .location_card {
+    transform: translateX(-100%);
+    animation: slide-in 1s forwards;
+  }
+
+  @keyframes slide-in {
+    from {
+      transform: translateX(-100%);
+    }
+    to {
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
 
 
 

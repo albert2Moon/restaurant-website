@@ -224,3 +224,20 @@ function isElementInViewport(element) {
     rect.right <= (window.innerWidth || document.documentElement.clientWidth)
   );
 }
+
+
+
+function animateOnScroll() {
+  const aboutPageCards = document.querySelectorAll('.aboutUs_container, .services_container, .location_container');
+  const windowHeight = window.innerHeight;
+
+  welcomeCards.forEach((card) => {
+    const cardPosition = card.getBoundingClientRect().top;
+
+    if (cardPosition - windowHeight <= 0) {
+      card.style.animation = 'fade-in 1s forwards';
+    }
+  });
+}
+
+window.addEventListener('scroll', animateOnScroll);
